@@ -1,0 +1,8 @@
+# Netlify redirects for SPA
+/*    /index.html   200
+
+# API redirects (if you have any)
+/api/*  https://your-api-domain.com/api/:splat  200
+
+# Force HTTPS (update with your actual domain)
+# http://your-domain.netlify.app/*  https://your-domain.netlify.app/:splat  301!
