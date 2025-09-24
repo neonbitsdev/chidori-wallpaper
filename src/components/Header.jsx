@@ -72,7 +72,7 @@ export default function Header({ setUser, setSearchText }) {
   return (
     <nav id="nav-bar" className="nav-bar">
       <div className="logo-bar">
-        <Link to="/" onClick={closeMobileMenu}>
+        <Link to="/">
           <div className="logo">
             <img src="/images/favicon.png" alt="Logo" />
             <h1>Chidori</h1>
@@ -84,13 +84,6 @@ export default function Header({ setUser, setSearchText }) {
             Savitar
           </a>
         </p>
-        <button 
-          className="mobile-menu-btn"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-        </button>
       </div>
 
       <div className="search-bar">
@@ -110,27 +103,54 @@ export default function Header({ setUser, setSearchText }) {
         >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
+        <button
+          className="mobile-menu-toggle"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </button>
       </div>
 
-      <ul className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
+      <ul className="nav">
         <li className="nav-link">
-          <Link to="/anime" onClick={closeMobileMenu}>Anime</Link>
+          <Link to="/anime">Anime</Link>
         </li>
         <li className="nav-link">
-          <Link to="/game" onClick={closeMobileMenu}>Game</Link>
+          <Link to="/game">Game</Link>
         </li>
         <li className="nav-link">
-          <Link to="/movie" onClick={closeMobileMenu}>Movie</Link>
+          <Link to="/movie">Movie</Link>
         </li>
         <li className="nav-link">
-          <Link to="/series" onClick={closeMobileMenu}>Series</Link>
+          <Link to="/series">Series</Link>
         </li>
         <li className="nav-link">
-          <Link to="/nature" onClick={closeMobileMenu}>Nature</Link>
+          <Link to="/nature">Nature</Link>
         </li>
       </ul>
 
-      <div className={`login-area ${isMobileMenuOpen ? 'login-area-open' : ''}`}>
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <ul className="mobile-nav">
+          <li className="mobile-nav-link">
+            <Link to="/anime" onClick={closeMobileMenu}>Anime</Link>
+          </li>
+          <li className="mobile-nav-link">
+            <Link to="/game" onClick={closeMobileMenu}>Game</Link>
+          </li>
+          <li className="mobile-nav-link">
+            <Link to="/movie" onClick={closeMobileMenu}>Movie</Link>
+          </li>
+          <li className="mobile-nav-link">
+            <Link to="/series" onClick={closeMobileMenu}>Series</Link>
+          </li>
+          <li className="mobile-nav-link">
+            <Link to="/nature" onClick={closeMobileMenu}>Nature</Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="login-area">
         {user ? (
           <div className="user-info">
             <span className="user-name">
