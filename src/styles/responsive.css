@@ -1,0 +1,172 @@
+@media (max-width: 1240px) {
+    .logo img {
+        width: 27px;
+    }
+    .logo h1 {
+        font-size: 1.85rem;
+    }
+    .section__title {
+        font-size: 1.2rem;
+    }
+    .card {
+        width: 350px;
+    }
+    .card-bar {
+        grid-template-columns: repeat(2, auto);
+    }
+    .card-title p {
+        font-size: 0.97rem;
+    }
+}
+
+@media (max-width: 769px) {
+    .logo img {
+        width: 27px;
+    }
+    #savitar {
+        font-size: 0.85rem;
+    }
+    #savitar a {
+        font-size: 0.85rem;
+    }
+    .search {
+        width: 324px;
+    }
+    .nav-link a {
+        font-size: 0.9rem;
+    }
+    .user-info img {
+        width: 17px;
+      }
+    .card-bar {
+        grid-template-columns: repeat(1, auto);
+    }
+    .card {
+        width: 380px;
+    }
+    .card-title p {
+        font-size: 0.95rem;
+    }
+    .login-btn, .logout-btn {
+        height: 25px;
+    }
+    .section__title {
+        font-size: 1.1rem;
+    }
+    .section__title::after {
+        width: 12rem;
+    }
+    .not-found img {
+        width: 240px;
+        height: 240px;
+    }
+    .scroll-to-top {
+        right: 11px;
+    }
+    .toast {
+        width: 385px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 485px) {
+    .logo img {
+        width: 26px;
+    }
+    .logo h1 {
+        font-size: 1.7rem;
+    }
+    .nav-link {
+        padding: 0.85rem;
+    }
+    .nav-link a {
+        font-size: 0.8rem;
+    }
+    #savitar {
+        font-size: 0.8rem;
+    }
+    #savitar a {
+        font-size: 0.8rem;
+    }
+    .search {
+        width: 240px;
+    }
+    .user-info img {
+        width: 16px;
+      }
+    .login-btn, .logout-btn {
+        height: 24px;
+    }
+    .section__title {
+        font-size: 1rem;
+    }
+    .section__title::after {
+        width: 11rem;
+    }
+    .card {
+        width: 320px;
+    }
+    .card-title p {
+        font-size: 0.9rem;
+        margin: 0 0 0.15rem 0.7rem;
+    }
+    .scroll-to-top {
+        right: 17px;
+    }
+    .toast {
+        width: 300px;
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .logo img {
+        width: 25px;
+    }
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    .nav-link {
+        padding: 0.8rem;
+    }
+    .nav-link a {
+        font-size: 0.75rem;
+    }
+    #savitar {
+        font-size: 0.8rem;
+    }
+    #savitar a {
+        font-size: 0.8rem;
+    }
+    .search {
+        width: 220px;
+    }
+    .login-btn, .logout-btn {
+        height: 23px;
+    }
+    .user-info img {
+        width: 15px;
+    }
+    .section__title {
+        font-size: 0.9rem;
+    }
+    .section__title::after {
+        width: 10rem;
+    }
+    .card {
+        width: 280px;
+    }
+    .card-title p {
+        font-size: 0.85rem;
+        margin: 0 0 0.15rem 0.7rem;
+    }
+    .scroll-to-top {
+        right: 15px;
+    }
+    .toast {
+        width: 280px;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Chidori - Wallpaper World",
+  "short_name": "Chidori",
+  "description": "Discover and download high-quality wallpapers for anime, games, movies, series, and nature",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#27374d",
+  "theme_color": "#9db2bf",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["entertainment", "lifestyle", "photography"],
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Anime Wallpapers",
+      "short_name": "Anime",
+      "description": "Browse anime wallpapers",
+      "url": "/anime",
+      "icons": [{ "src": "/images/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Game Wallpapers",
+      "short_name": "Games",
+      "description": "Browse gaming wallpapers",
+      "url": "/game",
+      "icons": [{ "src": "/images/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Nature Wallpapers",
+      "short_name": "Nature",
+      "description": "Browse nature wallpapers",
+      "url": "/nature",
+      "icons": [{ "src": "/images/favicon.png", "sizes": "96x96" }]
+    }
+  ]
+}

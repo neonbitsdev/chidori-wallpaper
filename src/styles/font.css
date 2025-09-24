@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Nippo-Bold";
+    src: url(./fonts/Nippo-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Nippo-Medium";
+    src: url(./fonts/Nippo-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Nippo-Regular";
+    src: url(./fonts/Nippo-Regular.woff) format('woff');
+}
