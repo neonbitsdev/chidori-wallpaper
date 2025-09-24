@@ -1,46 +1,46 @@
 import { useState, useEffect } from "react";
-import { auth, provider } from "../firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+// import { auth, provider } from "../firebase";
+// import { signInWithPopup, signOut } from "firebase/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Header({ setUser, setSearchText }) {
-  const [user, localSetUser] = useState(null);
+  // const [user, localSetUser] = useState(null);
   const [inputText, setInputText] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      localSetUser(currentUser);
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, [setUser]);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+  //     localSetUser(currentUser);
+  //     setUser(currentUser);
+  //   });
+  //   return () => unsubscribe();
+  // }, [setUser]);
 
   useEffect(() => {
     setInputText(""); 
     if (setSearchText) setSearchText("");
   }, [location.pathname, setSearchText]);
 
-  const login = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      localSetUser(result.user);
-      setUser(result.user);
-    } catch (err) {
-      console.error("Login error:", err);
-    }
-  };
+  // const login = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, provider);
+  //     localSetUser(result.user);
+  //     setUser(result.user);
+  //   } catch (err) {
+  //     console.error("Login error:", err);
+  //   }
+  // };
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-      localSetUser(null);
-      setUser(null);
-    } catch (err) {
-      console.error("Logout error:", err);
-    }
-  };
+  // const logout = async () => {
+  //   try {
+  //     await signOut(auth);
+  //     localSetUser(null);
+  //     setUser(null);
+  //   } catch (err) {
+  //     console.error("Logout error:", err);
+  //   }
+  // };
 
   const handleSearch = () => {
     const trimmed = inputText.trim();
@@ -114,7 +114,7 @@ export default function Header({ setUser, setSearchText }) {
         </li>
       </ul>
 
-      <div className="login-area">
+      {/* <div className="login-area">
         {user ? (
           <div className="user-info">
             <span className="user-name">
@@ -139,7 +139,7 @@ export default function Header({ setUser, setSearchText }) {
             <span className="e">e</span>
           </button>
         )}
-      </div>
+      </div> */}
     </nav>
   );
 }
