@@ -62,8 +62,7 @@
 }
 
 .login-btn:focus, .logout-btn:focus {
-  outline: 2px solid #4a90e2;
-  outline-offset: 2px;
+  outline: none;
 }
 
 .ripple {
@@ -444,6 +443,11 @@ body::before {
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
   backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
 }
 
 @media (max-width: 768px) {
