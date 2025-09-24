@@ -78,13 +78,14 @@ export default function Card({ tag, searchText, user, shuffle = false }) {
   }, [toastMessage]);
 
   const handleDownloadClick = (e, imageTitle) => {
-    if (!user) {
-      e.preventDefault();
-      setToastMessage('Log in to access and download your 4K wallpaper!');
-      announceToScreenReader('Please log in to download wallpapers');
-    } else {
+    // Commented out login requirement - allow downloads without login
+    // if (!user) {
+    //   e.preventDefault();
+    //   setToastMessage('Log in to access and download your 4K wallpaper!');
+    //   announceToScreenReader('Please log in to download wallpapers');
+    // } else {
       announceToScreenReader(`Downloading ${imageTitle}`);
-    }
+    // }
   };
 
   const handleImageLoad = (imageTitle) => {
@@ -131,9 +132,9 @@ export default function Card({ tag, searchText, user, shuffle = false }) {
               <div className="card-hover-overlay">
                 <div className="download-btn">
                   <a
-                    href={user ? image.download : '#'}
-                    target={user ? '_blank' : undefined}
-                    rel={user ? 'noopener noreferrer' : undefined}
+                    href={image.download}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={(e) => handleDownloadClick(e, image.title)}
                     className="download-link"
                     aria-label={`Download ${image.title} wallpaper`}
