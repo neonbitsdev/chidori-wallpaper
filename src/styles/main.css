@@ -590,7 +590,7 @@ body::before {
   .card-bar {
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin: 1rem;
+    margin: 0.5rem;
   }
 }
 
@@ -621,8 +621,9 @@ body::before {
 
 @media (max-width: 480px) {
   .card {
-    max-width: 100%;
-    min-width: 250px;
+    width: 100%;
+    max-width: 95vw;
+    min-width: unset;
     border-radius: 10px;
   }
 }

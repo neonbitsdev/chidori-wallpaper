@@ -52,7 +52,8 @@
         grid-template-columns: repeat(1, auto);
     }
     .card {
-        width: 380px;
+        width: 100%;
+        max-width: 90vw;
     }
     .card-title p {
         font-size: 0.95rem;
@@ -125,7 +126,8 @@
         width: 11rem;
     }
     .card {
-        width: 320px;
+        width: 100%;
+        max-width: 95vw;
     }
     .card-title p {
         font-size: 0.9rem;
@@ -185,7 +187,8 @@
         width: 10rem;
     }
     .card {
-        width: 280px;
+        width: 100%;
+        max-width: 95vw;
     }
     .card-title p {
         font-size: 0.85rem;
@@ -233,7 +236,8 @@
         width: 14px;
     }
     .card {
-        width: 260px;
+        width: 100%;
+        max-width: 95vw;
     }
     .section__title {
         font-size: 0.85rem;
