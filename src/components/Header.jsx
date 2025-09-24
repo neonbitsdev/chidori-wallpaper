@@ -6,7 +6,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 export default function Header({ setUser, setSearchText }) {
   const [user, localSetUser] = useState(null);
   const [inputText, setInputText] = useState("");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -61,14 +60,6 @@ export default function Header({ setUser, setSearchText }) {
     }
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <nav id="nav-bar" className="nav-bar">
       <div className="logo-bar">
@@ -103,13 +94,6 @@ export default function Header({ setUser, setSearchText }) {
         >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button
-          className="mobile-menu-toggle"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-        </button>
       </div>
 
       <ul className="nav">
@@ -129,26 +113,6 @@ export default function Header({ setUser, setSearchText }) {
           <Link to="/nature">Nature</Link>
         </li>
       </ul>
-
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <ul className="mobile-nav">
-          <li className="mobile-nav-link">
-            <Link to="/anime" onClick={closeMobileMenu}>Anime</Link>
-          </li>
-          <li className="mobile-nav-link">
-            <Link to="/game" onClick={closeMobileMenu}>Game</Link>
-          </li>
-          <li className="mobile-nav-link">
-            <Link to="/movie" onClick={closeMobileMenu}>Movie</Link>
-          </li>
-          <li className="mobile-nav-link">
-            <Link to="/series" onClick={closeMobileMenu}>Series</Link>
-          </li>
-          <li className="mobile-nav-link">
-            <Link to="/nature" onClick={closeMobileMenu}>Nature</Link>
-          </li>
-        </ul>
-      </div>
 
       <div className="login-area">
         {user ? (
