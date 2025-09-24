@@ -6,6 +6,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 export default function Header({ setUser, setSearchText }) {
   const [user, localSetUser] = useState(null);
   const [inputText, setInputText] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -60,10 +61,18 @@ export default function Header({ setUser, setSearchText }) {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav id="nav-bar" className="nav-bar">
       <div className="logo-bar">
-        <Link to="/">
+        <Link to="/" onClick={closeMobileMenu}>
           <div className="logo">
             <img src="/images/favicon.png" alt="Logo" />
             <h1>Chidori</h1>
@@ -75,6 +84,13 @@ export default function Header({ setUser, setSearchText }) {
             Savitar
           </a>
         </p>
+        <button 
+          className="mobile-menu-btn"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </button>
       </div>
 
       <div className="search-bar">
@@ -96,25 +112,25 @@ export default function Header({ setUser, setSearchText }) {
         </button>
       </div>
 
-      <ul className="nav">
+      <ul className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
         <li className="nav-link">
-          <Link to="/anime">Anime</Link>
+          <Link to="/anime" onClick={closeMobileMenu}>Anime</Link>
         </li>
         <li className="nav-link">
-          <Link to="/game">Game</Link>
+          <Link to="/game" onClick={closeMobileMenu}>Game</Link>
         </li>
         <li className="nav-link">
-          <Link to="/movie">Movie</Link>
+          <Link to="/movie" onClick={closeMobileMenu}>Movie</Link>
         </li>
         <li className="nav-link">
-          <Link to="/series">Series</Link>
+          <Link to="/series" onClick={closeMobileMenu}>Series</Link>
         </li>
         <li className="nav-link">
-          <Link to="/nature">Nature</Link>
+          <Link to="/nature" onClick={closeMobileMenu}>Nature</Link>
         </li>
       </ul>
 
-      <div className="login-area">
+      <div className={`login-area ${isMobileMenuOpen ? 'login-area-open' : ''}`}>
         {user ? (
           <div className="user-info">
             <span className="user-name">

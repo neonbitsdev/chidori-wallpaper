@@ -140,17 +140,43 @@ body::before {
   box-shadow: 
     0 4px 16px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(26, 26, 46, 0.3);
+  position: relative;
 }
 
 @media (max-width: 768px) {
   .nav-bar {
     padding: 0.6rem 0.8rem;
   }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .login-area {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
   .nav-bar {
     padding: 0.5rem 0.6rem;
+  }
+  
+  .mobile-menu-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+  }
+  
+  .nav-open .nav-link {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .nav-link a {
+    font-size: 0.75rem;
   }
 }
 
@@ -161,6 +187,30 @@ body::before {
 .logo-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(74, 144, 226, 0.1);
+  color: #d1e6ff;
+}
+
+.mobile-menu-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
 }
 
 .logo {
@@ -242,6 +292,22 @@ body::before {
 .nav {
   display: flex;
   list-style: none;
+  transition: all 0.3s ease;
+}
+
+.nav-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid #1a1a2e;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  padding: 1rem 0;
 }
 
 .nav-link {
@@ -252,6 +318,17 @@ body::before {
 @media (max-width: 768px) {
   .nav-link {
     padding: 0.3rem;
+    margin-top: 0;
+  }
+  
+  .nav-open .nav-link {
+    padding: 0.8rem 1rem;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+  }
+  
+  .nav-open .nav-link:last-child {
+    border-bottom: none;
   }
   
   .nav-link a {
@@ -428,6 +505,23 @@ body::before {
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.login-area-open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid #1a1a2e;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  padding: 1rem 0;
+  margin-top: 0;
 }
 
 .login-btn, .logout-btn {
